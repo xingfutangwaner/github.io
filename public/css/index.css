@@ -1,0 +1,13 @@
+*{
+		margin:20px auto;
+}
+#important{
+	font-size:52px;
+	font-weight:bold;
+	padding:10px 20px;
+	display:block;
+	width:260px;
+	color:red;
+	border:3px solid red;
+	border-radius:30px;
+}

@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>我的首页</title>
+		<title>告白气球</title>
 		<meta charset="utf8">
+		<link rel="stylesheet" type="text/css" href="./public/css/csshake.min.css">
+		<link rel="stylesheet" type="text/css" href="./public/css/index.css">
+		<script src="./public/js/jquery.3.1.1.min.js" ></script>
 	</head>
 	<body>
-		<div>测试了</div>
+		<div id="important" class="shake-rotate">我爱王晓佳</div>
+		<script>
+			$(function(){
+				var cssList = ["har","hard","slow","little","horizontal","vertical","rotate","opacity","crazy"];
+				var obj = $("#important");
+				obj.css({"animation-name":"shake-rotate","animation-duration":"10ms","animation-timing-function":"ease-in-out","animation-iteration-count":"infinite","animation-play-state":"running"});
+				var i = setInterval(function(){
+					obj.removeClass();
+					var key = cssList[parseInt(Math.random()*cssList.length, 10)];
+					var time = (parseInt(Math.random()*90, 10)+10)+"ms";
+					var size = (parseInt(Math.random()*60, 10)+40)+"px";
+					var classa = "shake-"+key;
+					obj.addClass(classa);
+					obj.css({"animation-name":classa,"animation-duration":time,"font-size":size});
+				}, 3000);
+				/*
+				function getStyle(oElm, strCssRule) {  
+					var strValue = "";  
+					if(document.defaultView && document.defaultView.getComputedStyle) {  
+						strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);  
+					} else if (oElm.currentStyle) {  
+						strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1) {  
+							return p1.toUpperCase();
+						});  
+						strValue = oElm.currentStyle[strCssRule];  
+					}  
+					return strValue;  
+				}
+				*/
+			});
+		</script>
 	</body>
 </html>
